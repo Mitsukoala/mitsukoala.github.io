@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fugu.ch | Ocean-Inspired Minimalism</title>
+    <style>
+        /* Fugu-inspired design with ocean/dark blue theme */
+        :root {
+            --primary-color: #f5f5f5;
+            --accent-color: #0f3057;
+            --text-color: #333333;
+            --highlight-color: #008891;
+            --deep-blue: #00587a;
+            --light-blue: #e0f7fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 80px 0;
+            text-align: center;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 300;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            padding-bottom: 5px;
+            border-bottom: 1px solid transparent;
+        }
+        
+        nav a:hover {
+            border-bottom: 1px solid var(--primary-color);
+        }
+        
+        .hero {
+            height: 400px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: var(--highlight-color);
+            opacity: 0.8;
+        }
+        
+        .featured {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .grid-item {
+            background-color: white;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .grid-item-icon {
+            font-size: 40px;
+            color: var(--accent-color);
+        }
+        
+        .testimonials {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .testimonial {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-size: 14px;
+            margin-top: 20px;
+            font-style: normal;
+            letter-spacing: 2px;
+        }
+        
+        .contact {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            font-family: inherit;
+            font-size: 14px;
+        }
+        
+        button {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 15px 40px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: var(--highlight-color);
+        }
+        
+        footer {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .social-icons {
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            color: var(--primary-color);
+            margin: 0 10px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                flex-direction: column;
+            }
+            
+            nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Fugu.ch</div>
+            <div class="tagline">Ocean-Inspired Minimalism</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Portfolio</a>
+                <a href="#">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" style="background-color: var(--light-blue);">
+        <div class="hero-circle" style="background-color: var(--deep-blue);"></div>
+    </section>
+    
+    <section class="featured">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="grid">
+                <div class="grid-item" style="background-color: rgba(0, 136, 145, 0.1);">
+                    <div class="grid-item-icon">◯</div>
+                </div>
+                <div class="grid-item" style="background-color: rgba(0, 88, 122, 0.1);">
+                    <div class="grid-item-icon">△</div>
+                </div>
+                <div class="grid-item" style="background-color: rgba(15, 48, 87, 0.1);">
+                    <div class="grid-item-icon">□</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What People Say</h2>
+            <div class="testimonial">
+                "Their ocean-inspired design approach creates a sense of calm and depth that perfectly captures the essence of the sea while maintaining elegant simplicity."
+                <div class="testimonial-author">MARIE WEBER</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Message"></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Fugu.ch | Ocean-Inspired Design. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
